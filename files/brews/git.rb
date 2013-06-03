@@ -75,6 +75,8 @@ class Git < Formula
       cp "#{bash_completion}/git-completion.bash", zsh_completion
     end
 
+    (share+'git-core').install 'contrib'
+
     # We could build the manpages ourselves, but the build process depends
     # on many other packages, and is somewhat crazy, this way is easier.
     GitManuals.new.brew { man.install Dir['*'] }
